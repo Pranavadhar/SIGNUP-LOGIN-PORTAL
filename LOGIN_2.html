@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIMPLE ENTRY PORTAL</title>
+  <style>
+    body{
+      font-family: 'Calibri';
+      background-color: #000000;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container{
+      position: relative;
+      width: 400px;
+      border: 1px solid #ffffff;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(93, 93, 93, 0.1);
+    }
+
+    h1{
+      text-align: center;
+      color: #000000;
+    }
+
+    form{
+      display: flex;
+      flex-direction: column;
+    }
+
+    label{
+      margin-bottom: 8px;
+      color: #555555;
+    }
+
+    input{
+      padding: 10px;
+      margin-bottom: 16px;
+      border: 1px solid #ffffff;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    input[type="submit"]{
+      background-color: #ff0000;
+      color: #ffffff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover{
+      background-color: #0059ff;
+    }
+
+    .hidden{
+      display: none;
+    }
+
+    #aboutBtn{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #333;
+      color: #fff;
+      padding: 8px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+    }
+
+    #aboutBox{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(93, 93, 93, 0.1);
+      display: none;
+      width: 500px; 
+      height: 500px; 
+      overflow: auto; 
+    }
+  </style>
+</head>
+<body>
+  <button id="aboutBtn" onclick="showAboutBox()">About</button>
+
+  <div class="container">
+    <h1>SIMPLE ENTRY PORTAL</h1>
+    
+    <div id="menu">
+        <button onclick="showForm('signupfrm')">Sign Up</button>
+        <button onclick="showForm('loginfrm')">Login</button>
+    </div>
+
+    <div id="loginfrm" class="hidden">
+      <h2>Login</h2>
+      <form action="login.php" method="post">
+        <label for="logun">USERNAME:</label>
+        <input type="text" name="logun" id="logun" required>
+        <label for="logpw">PASSWORD:</label>
+        <input type="password" name="logpw" id="logpw" required>
+        <input type="submit" value="Login">
+      </form>
+    </div>
+
+    <div id="signupfrm" class="hidden">
+      <h2>Sign Up</h2>
+      <form action="signup.php" method="post">
+        <label for="signun">USERNAME:</label>
+        <input type="text" name="signun" id="signun" required>
+        <label for="signpw">PASSWORD:</label>
+        <input type="password" name="signpw" id="signpw" required>
+        <input type="submit" value="Sign Up">
+      </form>
+    </div>
+  </div>
+
+  <div id="aboutBox">
+    <p><strong>PORTAL BY:</strong><br><br> Pranavadhar A</p>
+    <p><strong>DESCRIPTION:</strong><br><br>The <b>SIMPLE ENTRY PORTAL</b> is a simple and easy to use website for people to sign up and log in. It has a clean and modern look, making it easy for users to create accounts or log in without any trouble.</p>
+    <p><strong>GITHUB:</strong> <a href="https://github.com/Pranavadhar" target="_blank"><br><br>OTHER WORKS</a></p>
+    <p><strong>WEBSITE:</strong> <a href="https://pranavadhar.github.io/Pranavadhar-overview---web-work/" target="_blank"><br><br>MY PERSONAL WEBSITE</a></p>
+    <p><strong>LINKEDIN:</strong> <a href="https://www.linkedin.com/in/pranavadhar-a-b19525289/" target="_blank"><br><br>https://www.linkedin.com/in/pranavadhar-a-b19525289/</a></p>
+    <br><button onclick="hideAboutBox()">Close</button>
+  </div>
+
+  <script>
+    function showForm(formId){
+      document.getElementById('loginfrm').classList.add('hidden');
+      document.getElementById('signupfrm').classList.add('hidden');
+
+      document.getElementById(formId).classList.remove('hidden');
+    }
+
+    function showAboutBox(){
+      document.getElementById('aboutBox').style.display = 'block';
+    }
+
+    function hideAboutBox(){
+      document.getElementById('aboutBox').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
