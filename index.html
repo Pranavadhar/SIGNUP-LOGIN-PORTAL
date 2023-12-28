@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>...SIMPLE ENTRY PORTAL...</title>
+  <title>SIMPLE ENTRY PORTAL</title>
   <style>
     body {
       font-family: 'Calibri';
@@ -16,32 +17,42 @@
       height: 100vh;
     }
 
+    .menuClass {
+      align-items: center;
+      margin-left: 35%;
+      margin-right: 35%;
+    }
+
+    .btn1:hover {
+      color: #00f2ff;
+    }
+
     .container {
       position: relative;
       width: 400px;
       border: none;
       padding: 20px;
-      background-color: #140d0d;
-      box-shadow: 0 10px 20px rgba(12, 8, 8, 0.3);
+      background: linear-gradient(to bottom, #ffffff, #000000);
+      box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
       border-radius: 15px;
-      color: #ffffff; 
+      color: #000000;
     }
 
     h1 {
       text-align: center;
-      color: #ffffff;
+      color: #000000;
     }
 
     form {
       display: flex;
       flex-direction: column;
-      color: #ffffff; 
+      color: #ffffff;
     }
 
     label {
       margin-bottom: 8px;
       color: #ffffff;
-      font-weight: bold; 
+      font-weight: bold;
     }
 
     input {
@@ -50,7 +61,7 @@
       border: 1px solid #ffffff;
       border-radius: 4px;
       font-size: 14px;
-      color: #000000; 
+      color: #000000;
     }
 
     input[type="submit"] {
@@ -86,11 +97,11 @@
       left: 50%;
       transform: translate(-50%, -50%);
       padding: 20px;
-      background-color: #140d0d;
-      color:#ffffff;
-      box-shadow: 0 10px 20px rgba(12, 8, 8, 0.3);
+      background: linear-gradient(to bottom, #000000, #ffffff);
+      color: #ffffff;
+      box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
       border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(93, 93, 93, 0.1);
+      box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
       display: none;
       width: 500px;
       height: 500px;
@@ -98,15 +109,16 @@
     }
   </style>
 </head>
+
 <body>
   <button id="aboutBtn" onclick="showAboutBox()">About</button>
 
   <div class="container">
     <h1>SIMPLE ENTRY PORTAL</h1>
-    
-    <div id="menu">
-        <button onclick="showForm('signupfrm')">Sign Up</button>
-        <button onclick="showForm('loginfrm')">Login</button>
+
+    <div id="menu" class="menuClass">
+      <button class="btn1" onclick="showForm('signupfrm')">Sign Up</button>
+      <button class="btn1" onclick="showForm('loginfrm')">Login</button>
     </div>
 
     <div id="loginfrm" class="hidden">
@@ -134,28 +146,33 @@
 
   <div id="aboutBox">
     <p><strong>PORTAL BY:</strong><br><br> Pranavadhar A</p>
-    <p><strong>DESCRIPTION:</strong><br><br>The <b>SIMPLE ENTRY PORTAL</b> is a simple and easy-to-use website for people to sign up and log in. It has a clean and modern look, making it easy for users to create accounts or log in without any trouble.</p>
+    <p><strong>DESCRIPTION:</strong><br><br>The <b>SIMPLE ENTRY PORTAL</b> is a simple and easy-to-use website for
+      people to sign up and log in. It has a clean and modern look, making it easy for users to create accounts or log
+      in without any trouble.</p>
     <p><strong>GITHUB:</strong> <a href="https://github.com/Pranavadhar" target="_blank"><br><br>OTHER WORKS</a></p>
-    <p><strong>WEBSITE:</strong> <a href="https://pranavadhar.github.io/Pranavadhar-overview---web-work/" target="_blank"><br><br>MY PERSONAL WEBSITE</a></p>
-    <p><strong>LINKEDIN:</strong> <a href="https://www.linkedin.com/in/pranavadhar-a-b19525289/" target="_blank"><br><br>https://www.linkedin.com/in/pranavadhar-a-b19525289/</a></p>
+    <p><strong>WEBSITE:</strong> <a href="https://pranavadhar.github.io/Pranavadhar-overview---web-work/"
+        target="_blank"><br><br>MY PERSONAL WEBSITE</a></p>
+    <p><strong>LINKEDIN:</strong> <a href="https://www.linkedin.com/in/pranavadhar-a-b19525289/"
+        target="_blank"><br><br>https://www.linkedin.com/in/pranavadhar-a-b19525289/</a></p>
     <br><button onclick="hideAboutBox()">Close</button>
   </div>
 
   <script>
-    function showForm(formId){
+    function showForm(formId) {
       document.getElementById('loginfrm').classList.add('hidden');
       document.getElementById('signupfrm').classList.add('hidden');
 
       document.getElementById(formId).classList.remove('hidden');
     }
 
-    function showAboutBox(){
+    function showAboutBox() {
       document.getElementById('aboutBox').style.display = 'block';
     }
 
-    function hideAboutBox(){
+    function hideAboutBox() {
       document.getElementById('aboutBox').style.display = 'none';
     }
   </script>
 </body>
+
 </html>
